@@ -8,4 +8,12 @@ function draw() {
 
 }
 
+function getUserInput() {
+  // Get the value from the input field
+  var userInput = document.getElementById("userInput").value;
+
+  // Do something with the user input (e.g., display it)
+  alert("User input: " + userInput);
+}
+
 //key press key release val of input do whatever 
