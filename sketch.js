@@ -14,7 +14,8 @@ function setup() {
 
 //____________________________________________________________________
 
-function draw() {
+function draw() 
+{
   background(122, 255, 100);
   
   // is the button clicked? then we should start drawing 
@@ -22,75 +23,55 @@ function draw() {
     drawing = true;
   }
 
-  //____________________________________________________________________
+//____________________________________________________________________
 
-  if (drawing) {
-    let userInput = document.getElementById("userInput").value.toLowerCase();
-    if (switchUserInput("square")) 
-    {
+  switch (userInput) 
+  {
+    case "square":
       square(30, 20, 55);
-    }
-    if (switchUserInput("triangle")) 
-    {
+      break;
+
+    case "triangle":
       triangle(30, 75, 58, 20, 86, 75);
-    }
-    if (switchUserInput("trapezoid")) 
-    {
-      //three triangles make a trapezoid since p5 reference doesn't have a trapezoid function 
+      break;
+
+    case "trapezoid":
+      // three triangles make a trapezoid since p5 reference doesn't have a trapezoid function
       triangle(30, 75, 58, 20, 86, 75);
       triangle(58, 20, 86, 75, 108, 20);
       triangle(86, 75, 108, 20, 136, 75);
-    }
-    if (switchUserInput("circle")) 
-    {
-      circle(30, 30, 20);
-    }
-    if (switchUserInput("diamond")) 
-    {
-      // p5 reference has no diamond so rotating a square 
-      square(30, 20, 55);
-      rotate(90) 
-    }
-  }
-}
-function switchUserInput(String) 
-{
-  var userInput = document.getElementById("userInput").value;
-  if (userInput == String) 
-  {
-    return userInput; 
-  }
+      break;
 
+    case "circle":
+      circle(30, 30, 20);
+      break;
+
+    case "diamond":
+      // p5 reference has no diamond so rotating a square
+      push();
+      translate(60, 50);
+      rotate(QUARTER_PI);
+      square(0, 0, 55);
+      pop();
+      break;
+
+    default:
+      // Do nothing for unknown shapes
+      break;
+  }
+  userInputFlag = false;
 }
+
+//____________________________________________________________________
+
 function getUserInput() 
 {
-  var button = document.getElementById("button");
+var button = document.getElementById("button");
 
-  button.addEventListener('click', function () {
-    if (userInput == "square") 
-    {
-      console.log("returning true");
-      userInputFlag = true; // Set the flag to true when the button is clicked
-    }
-    if (userInput == "triangle") 
-    {
-      console.log("returning true");
-      userInputFlag = true; 
-    }
-    if (userInput == "circle") 
-    {
-      console.log("returning true");
-      userInputFlag = true; 
-    }
-    if (userInput == "trapezoid") 
-    {
-      console.log("returning true");
-      userInputFlag = true; 
-    }
-    if (userInput == "diamond") 
-    {
-      console.log("returning true");
-      userInputFlag = true; 
-    }
-  });
-}
+button.addEventListener('click', function ()
+{
+  userInputFlag = true; // when button clicked, flag is true 
+}); 
+} 
+
+ //____________________________________________________________________
