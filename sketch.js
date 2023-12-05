@@ -1,5 +1,3 @@
-
-
 //____________________________________________________________________
 
 
@@ -25,6 +23,21 @@ function draw()
 
 //____________________________________________________________________
 
+function getUserInput() 
+{
+  var userInput = document.getElementById("userInput").value; 
+  var button = document.getElementById("button");
+
+  button.addEventListener('click', function ()
+  {
+  userInputFlag = true; // when button clicked, flag is true 
+  }); 
+  return userInput; 
+} 
+
+ //____________________________________________________________________
+
+  userInput = getUserInput(); 
   switch (userInput) 
   {
     case "square":
@@ -63,15 +76,3 @@ function draw()
 }
 
 //____________________________________________________________________
-
-function getUserInput() 
-{
-var button = document.getElementById("button");
-
-button.addEventListener('click', function ()
-{
-  userInputFlag = true; // when button clicked, flag is true 
-}); 
-} 
-
- //____________________________________________________________________
