@@ -1,6 +1,4 @@
-//updating version history 
-import Math; 
-
+//updating version history again 
 //____________________________________________________________________
 
 
@@ -40,39 +38,7 @@ function getUserInput()
 
  //____________________________________________________________________
 
-  userInput = getUserInput(); 
-  switch (userInput) 
-  {
-    case "square":
-      square(30, 20, 55);
-      break;
-
-    case "triangle":
-      triangle(30, 75, 58, 20, 86, 75);
-      break;
-
-    case "trapezoid":
-      // three triangles make a trapezoid since p5 reference doesn't have a trapezoid function
-      triangle(30, 75, 58, 20, 86, 75);
-      triangle(58, 20, 86, 75, 108, 20);
-      triangle(86, 75, 108, 20, 136, 75);
-      break;
-
-    case "circle":
-      circle(30, 30, 20);
-      break;
-
-    case "diamond":
-      // p5 reference has no diamond so rotating a square
-      push();
-      translate(60, 50);
-      rotate(QUARTER_PI);
-      square(0, 0, 55);
-      pop();
-      break;
-    case "random polygon" : 
-    // run random polygon function we wrote HERE 
-//____________________________________________________________________
+ //____________________________________________________________________
 // attempt two
 function drawRandomPolygon() //omg kms why is it doing this shit again bruh 
 {
@@ -108,8 +74,44 @@ function drawRandomPolygon() //omg kms why is it doing this shit again bruh
   }
 } 
 
-
 //____________________________________________________________________
+
+  userInput = getUserInput(); 
+  switch (userInput) 
+  {
+    case "square":
+      square(30, 20, 55);
+      break;
+
+    case "triangle":
+      triangle(30, 75, 58, 20, 86, 75);
+      break;
+
+    case "trapezoid":
+      // three triangles make a trapezoid since p5 reference doesn't have a trapezoid function
+      triangle(30, 75, 58, 20, 86, 75);
+      triangle(58, 20, 86, 75, 108, 20);
+      triangle(86, 75, 108, 20, 136, 75);
+      break;
+
+    case "circle":
+      circle(30, 30, 20);
+      break;
+
+    case "diamond":
+      // p5 reference has no diamond so rotating a square
+      push();
+      translate(60, 50);
+      rotate(QUARTER_PI);
+      square(0, 0, 55);
+      pop();
+      break;
+    case "random polygon" : 
+    //hopefully this works 
+      drawRandomPolygon() 
+      break; 
+//____________________________________________________________________
+
 
     //case "random polygon with n sides":
       //userInput1 = getUserInput(); 
