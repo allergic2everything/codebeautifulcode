@@ -1,3 +1,6 @@
+//updating version history 
+import Math; 
+
 //____________________________________________________________________
 
 
@@ -67,10 +70,67 @@ function getUserInput()
       square(0, 0, 55);
       pop();
       break;
+    case "random polygon" : 
+    // run random polygon function we wrote HERE 
+//____________________________________________________________________
+// attempt two
+function drawRandomPolygon() //omg kms why is it doing this shit again bruh 
+{
+  let userInput1 = parseInt(document.getElementById("userInput").value); 
+  switch (userInput1) 
+  { 
+    case 101 : 
+    //user prompt 
+      let n = parseInt(prompt("Enter the number of sides (between 3 and 100)"))
+      if (n>= 3 && n <= 100)
+        {
+          let centerX = 200; 
+          let centerY = 200; 
+          let radius = 150; 
+          beginShape(); 
+          vertex(centerX, centerY); 
+          for (let i=0; i <n; i++) 
+            {
+              let angle = TWO_PI / (n*i); 
+              let x = centerX + (radius * cos(angle)); 
+              let y = centerY + (radius * sin(angle)); 
+              vertex(x,y); 
+            }
+           endShape(CLOSE); 
+        }
+        else 
+        { 
+          console.log("Please enter a valid number of sides between 3 and 100"); 
+        }
+        break; 
+    default : 
+        System.out.println("Hello there!"); 
+  }
+} 
 
-    default:
+
+//____________________________________________________________________
+
+    //case "random polygon with n sides":
+      //userInput1 = getUserInput(); 
+      //why tf is this giving me an error its correct
+      //final int centerX = 200; 
+      //final int centerY = 200; 
+      //int x = 200; 
+      //int y = 200; 
+      //int radius = 150; 
+      //beginShape(); 
+      //for (int i= 0; i< n; n++) //kms. 
+      //{
+        //x = centerX + (radius*Math.cos(x));  //what the hell 
+        //y = centerY + (radius*Math.sin(y)); 
+        push(vertex(x,y)); 
+      //}
+      //endShape(); 
+
+    //default:
       // Do nothing for unknown shapes
-      break;
+      //break;
   }
   userInputFlag = false;
 }
