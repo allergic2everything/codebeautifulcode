@@ -15,11 +15,13 @@ function setup() {
 function draw() 
 {
   background(122, 255, 100);
-  
+  var flag = getUserInput(); 
+  console.log(flag); 
   // is the button clicked? then we should start drawing 
-  if (userInputFlag) 
+  if (flag) 
   {
     drawing = true;
+    console.log(drawing); 
   }
 
 //____________________________________________________________________
@@ -27,7 +29,7 @@ function draw()
   if (drawing) //if drawing is true! 
   {
     let userInput = document.getElementById("userInput").value.toLowerCase();
-    userInput = getUserInput(); 
+    console.log(userInput); 
     switch (userInput) 
     {
       case "square":
@@ -75,12 +77,15 @@ function draw()
 
 function getUserInput() 
 {
+
+  let userInputFlag = false; 
   var button = document.getElementById("button");
 
   button.addEventListener('click', function ()
   {
   userInputFlag = true; // when button clicked, flag is true 
   }); 
+  return userInputFlag; 
 
 } 
 
@@ -110,4 +115,5 @@ function drawRandomPolygon()
     console.log("Please enter a valid number of sides between 3 and 100");
   }
 }
+
 
