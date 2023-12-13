@@ -61,7 +61,8 @@ function draw()
         break;
       
       case "draw random polygon": 
-        drawRandomPolygon(); 
+        drawRandomPolygon();
+        displayInputElements();
         break; 
       
       default : 
@@ -114,6 +115,35 @@ function drawRandomPolygon()
   {
     console.log("Please enter a valid number of sides between 3 and 100");
   }
+}
+//____________________________________________________________________
+
+// attempt three mf 
+
+
+function displayInputElements() 
+{
+  // Check if the user input is "draw random polygon"
+  if (userInput === "draw random polygon") 
+  {
+    // Create a text field
+    let textField = document.createElement("input");
+    textField.type = "text";
+    textField.placeholder = "Enter something";
+    textField.id = "secondInput"; // Assign a unique ID to the new text field
+  
+    // Create a button
+    let button1 = document.createElement("button");
+    button1.innerHTML = "Submit";
+    button1.onclick = function () {
+      console.log("Button clicked with input: " + textField.value);
+      // You can do something with the input here
+    };
+  
+    // Append elements to the body
+    document.body.appendChild(textField);
+    document.body.appendChild(button1);
+  } 
 }
 
 
