@@ -13,3 +13,5 @@ important note - i used this through the "p5.vscode" extension in vscode. there 
 i think that's it. thank you! 
 
 email for inquiries - hellokittycodes@gmail.com 
+
+update - 12.13.2023 : IT WORKS HAHAHHAHHAH and i finally properly documented a project for once in my life. this feels great. 
