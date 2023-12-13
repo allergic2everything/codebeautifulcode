@@ -1,147 +1,93 @@
-//____________________________________________________________________
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketch</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="libraries/quicksettings.js"></script>
+  <script src="libraries/p5.gui.js"></script>
+</head>
 
-//big ups to p5.js reference, my classmates, and chat gpt 
-
-let userInputFlag = false; // stores whether or not the button was clicked 
-
-function setup() {
-  createCanvas(400, 400);
-  drawing = false;
-}
-
-//____________________________________________________________________
-
-function draw() 
-{
-  background(122, 255, 100);
-  print(getUserInput()); 
-  var flag = getUserInput(); 
-  // is the button clicked? then we should start drawing 
-  if (flag) 
+<body>
+  <script 
+  src="sketch.js">
+  //writing a function 
+  // o god what do i do from here 
+  function ifclicked() 
   {
-    drawing = true;
-    console.log(drawing); 
-  }
+ 
+    let clicked = false; 
+    var button = document.getElementById("button");
 
-//____________________________________________________________________
-
-  if (drawing) //if drawing is true! 
-  {
-    let userInput = document.getElementById("userInput").value.toLowerCase();
-    console.log(userInput); 
-    switch (userInput) 
+    button.addEventListener('click', function ()
     {
-      case "square":
-        square(30, 20, 55);
-        break;
-
-      case "triangle":
-        triangle(30, 75, 58, 20, 86, 75);
-        break;
-
-      case "trapezoid":
-        // three triangles make a trapezoid since p5 reference doesn't have a trapezoid function
-        triangle(30, 75, 58, 20, 86, 75);
-        triangle(58, 20, 86, 75, 108, 20);
-        triangle(86, 75, 108, 20, 136, 75);
-        break;
-
-      case "circle":
-        circle(30, 30, 20);
-        break;
-
-      case "diamond":
-        // p5 reference has no diamond so rotating a square
-        push();
-        translate(60, 50);
-        rotate(QUARTER_PI);
-        square(0, 0, 55);
-        pop();
-        break;
-      
-      case "draw random polygon": 
-        drawRandomPolygon();
-        displayInputElements();
-        break; 
-      
-      default : 
-        //something to do nothing 
-        break; 
-
-    }
-  //resetting userInput
-  userInputFlag = false; 
-  }
-} 
-//____________________________________________________________________
-
-function getUserInput() 
-{
-  var button = document.getElementById("button");
-
-  button.addEventListener('click', function ()
-  {
     userInputFlag = true; // when button clicked, flag is true 
-  }); 
-  return userInputFlag; 
+    }); 
+    return userInputFlag;
+    return clicked;  
 
-} 
-
-//____________________________________________________________________
-
-// attempt two
-function drawRandomPolygon() 
-{
-  let n = parseInt(prompt("Enter the number of sides (between 3 and 100)"));
-  if (n >= 3 && n <= 100) 
-  {
-    let centerX = 200;
-    let centerY = 200;
-    let radius = 150;
-    beginShape();
-    for (let i = 0; i < n; i++) 
-    {
-      let angle = TWO_PI * i / n; // Corrected angle calculation
-      let x = centerX + (radius * cos(angle));
-      let y = centerY + (radius * sin(angle));
-      vertex(x, y);
-    }
-    endShape(CLOSE);
   } 
-  else 
-  {
-    console.log("Please enter a valid number of sides between 3 and 100");
-  }
-}
 //____________________________________________________________________
+  //if get input is clicked and random polygon is typed, another
+  //text field + input button should pop up 
 
-// attempt three mf 
+  function displayInputElements() 
+    { 
+      if (clicked) //getrandomboolean
+      { 
+      var sincitywasntmadeforyou = document.createElement("input");
+      sincitywasntmadeforyou.type = "text";
+      sincitywasntmadeforyou.placeholder = "Enter something";
 
+      //creating a button 
+      var button1 = document.createElement("button1");
+      button1.innerHTML = "Submit";
+      
+      // append elements to the thing
+      document.body.appendChild(sincitywasntmadeforyou);
+      document.body.appendChild(button1);
+      }
+    } 
+</script>
+    Button to trigger the creation of input elements 
+  <input type="text" id="userInput">
+  <button id="button">Get Input</button>
+  <button onclick="displayInputElements()">Display Input Elements</button>
 
-function displayInputElements() 
-{
-  // Check if the user input is "draw random polygon"
-  if (userInput === "draw random polygon") 
-  {
-    // Create a text field
-    let textField = document.createElement("input");
-    textField.type = "text";
-    textField.placeholder = "Enter something";
-    textField.id = "secondInput"; // Assign a unique ID to the new text field
-  
-    // Create a button
-    let button1 = document.createElement("button");
-    button1.innerHTML = "Submit";
-    button1.onclick = function () {
-      console.log("Button clicked with input: " + textField.value);
-      // You can do something with the input here
-    };
-  
-    // Append elements to the body
-    document.body.appendChild(textField);
-    document.body.appendChild(button1);
-  } 
-}
+</body>
+</html> 
+--> 
+
+<!-- ______________________CHATGPTCODE____________________ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketch</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="libraries/quicksettings.js"></script>
+  <script src="libraries/p5.gui.js"></script>
+</head>
+<body>
+  <script src="sketch.js"></script>
+
+  <!-- Input field and button for user input -->
+  <label for="Describe what you want to see"> Describe:</label>
+  <input type="text" id="description here" name="description here" placeholder="describe here"><br>
+  <input type="text" id="userInput">
+  <button id="button">Get Input</button>
+
+</body>
+</html>
+
 
 
