@@ -15,8 +15,8 @@ function setup() {
 function draw() 
 {
   background(122, 255, 100);
+  print(getUserInput()); 
   var flag = getUserInput(); 
-  console.log(flag); 
   // is the button clicked? then we should start drawing 
   if (flag) 
   {
@@ -78,13 +78,11 @@ function draw()
 
 function getUserInput() 
 {
-
-  let userInputFlag = false; 
   var button = document.getElementById("button");
 
   button.addEventListener('click', function ()
   {
-  userInputFlag = true; // when button clicked, flag is true 
+    userInputFlag = true; // when button clicked, flag is true 
   }); 
   return userInputFlag; 
 
