@@ -1,5 +1,5 @@
 //____________________________________________________________________
-
+// Required Concepts Included : Interactivity, Randomness and Probability, 
 
 //big ups to p5.js reference, my classmates, and chat gpt 
 
