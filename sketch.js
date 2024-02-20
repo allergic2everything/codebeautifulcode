@@ -2,6 +2,8 @@
 
 //big ups to p5.js reference, my classmates, and chat gpt 
 
+//hi hi 
+
 let userInputFlag = false; // stores whether or not the button was clicked 
 let drawing = false; // declaration for 'drawing' variable
 
